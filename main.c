@@ -1,8 +1,8 @@
 #include "myapp.h"
 
-// 定义指示灯寄存器地址和寄存器类型
+// 瀹氫箟鎸囩ず鐏瘎瀛樺櫒鍦板潃鍜屽瘎瀛樺櫒绫诲瀷
 #define LBDS (*((unsigned int *)0x400001))
-#define
+#define a
 void INTR_init( void );
 void TIMER_init(void);
 
