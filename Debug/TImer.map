@@ -1,0 +1,202 @@
+******************************************************************************
+              TMS320C55x Linker PC v4.4.1                      
+******************************************************************************
+>> Linked Sun Oct 09 10:04:51 2022
+
+OUTPUT FILE NAME:   <TImer.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 00000685
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+                        (bytes)   (bytes)    (bytes)   (bytes)
+----------------------  --------  ---------  --------  --------  ----  --------
+  DARAM                 00000100   00007f00  00000ae7  00007419  RWIX
+  VECT                  0000d000   00000100  000000a2  0000005e  RWIX
+  DARAM2                0000d100   00001f00  0000001e  00001ee2  RWIX
+  SARAM                 00010000   00030000  00000000  00030000  RWIX
+  SDRAM                 00040000   003e0000  00000000  003e0000  RWIX
+
+
+SECTION ALLOCATION MAP
+(Addresses surrounded by []'s are displayed for convenience only!)
+
+output                                                          attributes/
+section   page  orgn(bytes) orgn(words) len(bytes) len(words)   input sections
+--------  ----  ----------- ----------- ---------- ----------   --------------
+.pinit       0   [ 00000100 ]  00000080          *   00000000   UNINITIALIZED
+
+.text        0     00000100  [ 00000080 ] 000005d5          *   
+                   00000100  [ 00000080 ] 00000256          *   util.obj (.text)
+                   00000356  [ 000001ab ] 00000127          *   main.obj (.text:retain)
+                   0000047d  [ 0000023e+] 0000007d          *   main.obj (.text)
+                   000004fa  [ 0000027d ] 00000079          *   sdram_init.obj (.text)
+                   00000573  [ 000002b9+] 0000004d          *   rts55x.lib : autoinit.obj (.text)
+                   000005c0  [ 000002e0 ] 0000004b          *              : args_main.obj (.text)
+                   0000060b  [ 00000305+] 0000003e          *              : exit.obj (.text)
+                   00000649  [ 00000324+] 0000003c          *              : idiv.obj (.text)
+                   00000685  [ 00000342+] 00000034          *              : boot.obj (.text)
+                   000006b9  [ 0000035c+] 00000012          *              : _lock.obj (.text)
+                   000006cb  [ 00000365+] 00000007          *              : exit.obj (.text:CIO_breakpoint)
+                   000006d2  [ 00000369 ] 00000002          *              : vectors.obj (.text)
+                   000006d4  [ 0000036a ] 00000001          *   --HOLE-- [fill = 20]
+
+.stack       0   [ 000006d8 ]  0000036c          *   000000fa   UNINITIALIZED
+                 [ 000006d8 ]  0000036c          *   000000fa   --HOLE--
+
+.sysstack 
+*            0   [ 000008cc ]  00000466          *   000000fa   UNINITIALIZED
+                 [ 000008cc ]  00000466          *   000000fa   --HOLE--
+
+.cinit       0   [ 00000ac0 ]  00000560          *   00000015   
+                 [ 00000ac0 ]  00000560          *   0000000a   rts55x.lib : _lock.obj (.cinit)
+                 [ 00000ad4 ]  0000056a          *   0000000a              : exit.obj (.cinit)
+                 [ 00000ae8 ]  00000574          *   00000001   --HOLE-- [fill = 0]
+
+vectors      0     00000af0  [ 00000578 ] 00000100          *   
+                   00000af0  [ 00000578 ] 00000100          *   rts55x.lib : vectors.obj (vectors)
+
+.vectors     0     0000d000  [ 00006800 ] 000000a2          *   
+                   0000d000  [ 00006800 ] 000000a0          *   vectors.obj (.vectors)
+                   0000d0a0  [ 00006850 ] 00000002          *   --HOLE-- [fill = 20]
+
+.bss         0   [ 0000d100 ]  00006880          *   0000000f   UNINITIALIZED
+                 [ 0000d100 ]  00006880          *   00000006   util.obj (.bss)
+                 [ 0000d10c ]  00006886          *   00000004   rts55x.lib : _lock.obj (.bss)
+                 [ 0000d114 ]  0000688a          *   00000004              : exit.obj (.bss)
+                 [ 0000d11c ]  0000688e          *   00000001   main.obj (.bss)
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+abs. value/
+byte addr   word addr   name
+---------   ---------   ----
+00000002                $TI_capability$C5500$CallingConvention
+00000002                $TI_capability$C5500$MemoryModel
+00000001                $TI_capability_requires_rev2
+            00006880    .bss
+00000100                .text
+000006cc                C$$EXIT
+00000649                I$$DIV
+00000668                I$$MOD
+0000049f                _INTR_init
+000001ed                _INT_Disable
+00000208                _INT_DisableGlobal
+000001d8                _INT_Enable
+00000204                _INT_EnableGlobal
+0000022a                _INT_InstallHandler
+0000020c                _INT_SetVec
+00000100                _PLL_Init
+00000af0                _Reset
+000004fa                _SDRAM_init
+000002f6                _SWDelayMsec
+000002a9                _SWDelayUsec
+000004c3                _TIMER_init
+00000356                _Timer
+            00000466    __STACK_END
+000001f4                __STACK_SIZE
+000001f4                __SYSSTACK_SIZE
+00000001                __TI_args_main
+ffffffff                ___binit__
+            00006880    ___bss__
+ffffffff                ___c_args__
+            00000560    ___cinit__
+            0000688f    ___end__
+000006d5                ___etext__
+ffffffff                ___pinit__
+00000100                ___text__
+000005c0                __args_main
+            0000688a    __cleanup_ptr
+00000649                __divi
+            0000688c    __dtors_ptr
+            00006886    __lock
+000006c9                __nop
+000006c1                __register_lock
+000006b9                __register_unlock
+00000668                __remi
+            0000036c    __stack
+            00000466    __sysstack
+            00006888    __unlock
+000006cb                _abort
+00000573                _auto_init
+00000685                _c_int00
+            00006880    _dspclk
+0000060b                _exit
+00000320                _firstbit
+0000047d                _main
+            0000688e    _nCount
+ffffffff                binit
+            00000560    cinit
+            0000688f    end
+000006d5                etext
+ffffffff                pinit
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+abs. value/
+byte addr   word addr   name
+---------   ---------   ----
+00000001                $TI_capability_requires_rev2
+00000001                __TI_args_main
+00000002                $TI_capability$C5500$CallingConvention
+00000002                $TI_capability$C5500$MemoryModel
+00000100                .text
+00000100                _PLL_Init
+00000100                ___text__
+000001d8                _INT_Enable
+000001ed                _INT_Disable
+000001f4                __STACK_SIZE
+000001f4                __SYSSTACK_SIZE
+00000204                _INT_EnableGlobal
+00000208                _INT_DisableGlobal
+0000020c                _INT_SetVec
+0000022a                _INT_InstallHandler
+000002a9                _SWDelayUsec
+000002f6                _SWDelayMsec
+00000320                _firstbit
+00000356                _Timer
+0000047d                _main
+0000049f                _INTR_init
+000004c3                _TIMER_init
+000004fa                _SDRAM_init
+00000573                _auto_init
+000005c0                __args_main
+0000060b                _exit
+00000649                I$$DIV
+00000649                __divi
+00000668                I$$MOD
+00000668                __remi
+00000685                _c_int00
+000006b9                __register_unlock
+000006c1                __register_lock
+000006c9                __nop
+000006cb                _abort
+000006cc                C$$EXIT
+000006d5                ___etext__
+000006d5                etext
+            0000036c    __stack
+            00000466    __STACK_END
+            00000466    __sysstack
+            00000560    ___cinit__
+            00000560    cinit
+00000af0                _Reset
+            00006880    .bss
+            00006880    ___bss__
+            00006880    _dspclk
+            00006886    __lock
+            00006888    __unlock
+            0000688a    __cleanup_ptr
+            0000688c    __dtors_ptr
+            0000688e    _nCount
+            0000688f    ___end__
+            0000688f    end
+ffffffff                ___binit__
+ffffffff                ___c_args__
+ffffffff                ___pinit__
+ffffffff                binit
+ffffffff                pinit
+
+[59 symbols]

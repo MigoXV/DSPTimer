@@ -1,0 +1,6 @@
+"./main.obj"
+"./sdram_init.obj"
+"./util.obj"
+"./vectors.obj"
+"../ICETEK-VC5509-A.cmd"
+-llibc.a
