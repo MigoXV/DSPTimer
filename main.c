@@ -2,7 +2,7 @@
 
 // 定义指示灯寄存器地址和寄存器类型
 #define LBDS (*((unsigned int *)0x400001))
-
+#define
 void INTR_init( void );
 void TIMER_init(void);
 

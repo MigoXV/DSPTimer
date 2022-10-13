@@ -123,34 +123,34 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXE_OUTPUTS += \
-TImer.out \
+DSPTimer.out \
 
 EXE_OUTPUTS__QUOTED += \
-"TImer.out" \
+"DSPTimer.out" \
 
 BIN_OUTPUTS += \
-TImer.hex \
+DSPTimer.hex \
 
 BIN_OUTPUTS__QUOTED += \
-"TImer.hex" \
+"DSPTimer.hex" \
 
 
 # All Target
 all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
-	@$(MAKE) --no-print-directory -Onone "TImer.out"
+	@$(MAKE) --no-print-directory -Onone "DSPTimer.out"
 
 # Tool invocations
-TImer.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
+DSPTimer.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo '正在调用： C5500 Linker'
-	"D:/Code Composer Studio/ccs/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -g --define=c5509a --display_error_number --diag_warning=225 --ptrdiff_size=32 -z -m"TImer.map" --stack_size=0x200 --heap_size=0x400 -i"D:/Code Composer Studio/ccs/tools/compiler/c5500_4.4.1/lib" -i"D:/Code Composer Studio/ccs/tools/compiler/c5500_4.4.1/include" --reread_libs --display_error_number --warn_sections --xml_link_info="TImer_linkInfo.xml" --rom_model --sys_stacksize=0x200 -o "TImer.out" $(ORDERED_OBJS)
+	"D:/Code Composer Studio/ccs/tools/compiler/c5500_4.4.1/bin/cl55" -v5509A --memory_model=large -g --define=c5509a --display_error_number --diag_warning=225 --ptrdiff_size=32 -z -m"DSPTimer.map" --stack_size=0x200 --heap_size=0x400 -i"D:/Code Composer Studio/ccs/tools/compiler/c5500_4.4.1/lib" -i"D:/Code Composer Studio/ccs/tools/compiler/c5500_4.4.1/include" --reread_libs --display_error_number --warn_sections --xml_link_info="DSPTimer_linkInfo.xml" --rom_model --sys_stacksize=0x200 -o "DSPTimer.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
-TImer.hex: $(EXE_OUTPUTS)
+DSPTimer.hex: $(EXE_OUTPUTS)
 	@echo 'Building secondary target: "$@"'
 	@echo '正在调用： C5500 Hex Utility'
-	"D:/Code Composer Studio/ccs/tools/compiler/c5500_4.4.1/bin/hex55"  -o "TImer.hex" $(EXE_OUTPUTS__QUOTED)
+	"D:/Code Composer Studio/ccs/tools/compiler/c5500_4.4.1/bin/hex55"  -o "DSPTimer.hex" $(EXE_OUTPUTS__QUOTED)
 	@echo 'Finished building secondary target: "$@"'
 	@echo ' '
 
